@@ -1,6 +1,8 @@
+bracketSpacing: false
 proseWrap: always
 singleQuote: true
 trailingComma: all
+
 # You can remove these overrides if you like TypeScript at 80 width
 overrides:
   - files: '*.ts'
