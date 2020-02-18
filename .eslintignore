@@ -1,5 +1,11 @@
 # Builds
+build
 dist
 lib
+
+# Other
+node_modules
+public
+static
 
 # Add any specific files to ignore below
