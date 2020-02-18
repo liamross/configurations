@@ -1,5 +1,12 @@
 # Builds
+build
 dist
 lib
+
+# Ignore node modules folder
+node_modules
+
+# Prettier breaks some mdx files
+*/**/*.mdx
 
 # Add any specific files to ignore below
