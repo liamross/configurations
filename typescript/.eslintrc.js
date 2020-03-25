@@ -22,17 +22,17 @@ module.exports = {
       version: 'detect',
     },
   },
-  plugins: ['react', 'react-hooks'],
+  plugins: ['react', 'react-hooks', 'jsx-a11y'],
   extends: [
     'eslint:recommended',
     'plugin:react/recommended',
+    'plugin:jsx-a11y/recommended',
     'prettier',
     'prettier/react',
   ],
   rules: {
     // Off
-    'react/prop-types': 0,
-    'react/no-unescaped-entities': 0,
+    // 'react/react-in-jsx-scope': 0, // Uncomment for Next.js projects.
 
     // On
     'react-hooks/rules-of-hooks': 2,
@@ -48,15 +48,13 @@ module.exports = {
       ],
       rules: {
         // Off
-        '@typescript-eslint/ban-ts-ignore': 0,
-        '@typescript-eslint/camelcase': 0,
-        '@typescript-eslint/no-explicit-any': 0,
-        '@typescript-eslint/no-non-null-assertion': 0,
+        '@typescript-eslint/ban-ts-ignore': 0, // Sometimes it is necessary (bad types etc).
+        '@typescript-eslint/camelcase': 0, // Sometimes names are not camel case, don't enforce.
+        '@typescript-eslint/no-explicit-any': 0, // Sometimes any really is necessary. Enable in public code bases.
+        '@typescript-eslint/no-non-null-assertion': 0, // Sometimes this is necessary.
 
         // On
-        '@typescript-eslint/no-unused-vars': 2,
-        '@typescript-eslint/unbound-method': 2,
-        '@typescript-eslint/no-unused-vars': [2, {argsIgnorePattern: '^_'}],
+        '@typescript-eslint/no-unused-vars': [2, {argsIgnorePattern: '^_'}], // Allow underscore for unused.
         '@typescript-eslint/explicit-function-return-type': [
           2,
           {allowExpressions: true},
@@ -67,9 +65,9 @@ module.exports = {
       files: ['**/scripts/**/*', '**/__tests__/**/*'],
       rules: {
         // Off
-        '@typescript-eslint/no-var-requires': 0,
-        '@typescript-eslint/explicit-function-return-type': 0,
-        '@typescript-eslint/no-use-before-define': 0,
+        '@typescript-eslint/no-var-requires': 0, // Allow var requires in scripts and tests.
+        '@typescript-eslint/explicit-function-return-type': 0, // Don't require return types.
+        '@typescript-eslint/no-use-before-define': 0, // Can use before define in scripts and tests.
       },
     },
   ],
