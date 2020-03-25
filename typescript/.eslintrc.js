@@ -54,6 +54,7 @@ module.exports = {
         '@typescript-eslint/no-non-null-assertion': 0, // Sometimes this is necessary.
 
         // On
+        '@typescript-eslint/unbound-method': 2,
         '@typescript-eslint/no-unused-vars': [2, {argsIgnorePattern: '^_'}], // Allow underscore for unused.
         '@typescript-eslint/explicit-function-return-type': [
           2,
